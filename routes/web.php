@@ -22,12 +22,9 @@ Route::get('/', function () {
 Route::resource('departments', DepartmentController::class);
 Route::resource('designations', DesignationController::class);
 
-Route::get('/users', [App\Http\Controllers\UserController::class,'index']);
-Route::get('/users', [App\Http\Controllers\UserController::class,'index'])->name('index');
-Route::get('/add-user', [App\Http\Controllers\UserController::class,'add']);
-Route::post('/insert-user', [App\Http\Controllers\UserController::class,'insert']);
-Route::get('/ edit-user/{id}', [App\Http\Controllers\UserController::class,'edit']);
-Route::put('/update-user/{id}', [App\Http\Controllers\UserController::class,'update']);
-Route::get('/delete-user/{id}', [App\Http\Controllers\UserController::class,'destroy']);
+Route::get('/users', [UserController::class,'index']);
+Route::get('/users', [UserController::class,'index'])->name('index');
+Route::get('/add-user', [UserController::class,'add']);
+Route::post('/insert-user', [UserController::class,'insert']);
 //Route::get('/search', [App\Http\Controllers\UserController::class,'search'])->name('user.search');
 Route::get('/action', [UserController::class, 'action'])->name('action');
